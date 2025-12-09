@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { BookContent } from './components/BookContent';
 import { CHAPTERS } from './constants';
-import { Search, Menu, X, BookOpen, ChevronRight, Search as SearchIcon } from 'lucide-react';
+import { Search, Menu, X, BookOpen, ChevronRight } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +59,7 @@ function App() {
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start justify-center pt-20 px-4">
           <div className="bg-white w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
             <div className="p-4 border-b border-stone-100 flex items-center gap-3">
-              <SearchIcon className="text-stone-400 w-5 h-5" />
+              <Search className="text-stone-400 w-5 h-5" />
               <input 
                 autoFocus
                 type="text" 
