@@ -1,13 +1,13 @@
-import React from 'react';
+import { FC, ReactNode } from 'react';
 
-const HighlightBox: React.FC<{ children: React.ReactNode; icon?: React.ReactNode }> = ({ children, icon }) => (
+const HighlightBox: FC<{ children: ReactNode; icon?: ReactNode }> = ({ children, icon }) => (
   <div className="bg-[#f3ece7] border-l-4 border-accent p-6 my-8 rounded-r-md font-serif italic text-lg leading-relaxed shadow-sm">
     {icon && <div className="mb-2 text-accent">{icon}</div>}
     {children}
   </div>
 );
 
-const TipBox: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
+const TipBox: FC<{ title: string; children: ReactNode }> = ({ title, children }) => (
   <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-8 shadow-sm">
     <span className="block text-green-700 font-bold mb-2 font-sans flex items-center gap-2">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4"/><path d="m5 6 2.5 1.5"/><path d="m19 6-2.5 1.5"/><path d="M12 18v4"/><path d="m5 18 2.5-1.5"/><path d="m19 18-2.5-1.5"/><circle cx="12" cy="12" r="3"/></svg>
@@ -17,20 +17,20 @@ const TipBox: React.FC<{ title: string; children: React.ReactNode }> = ({ title,
   </div>
 );
 
-const SectionTitle: React.FC<{ id: string; children: React.ReactNode }> = ({ id, children }) => (
+const SectionTitle: FC<{ id: string; children: ReactNode }> = ({ id, children }) => (
   <h2 id={id} className="text-2xl md:text-3xl font-bold text-subAccent mt-16 mb-6 pt-6 border-t border-stone-200 scroll-mt-24 font-sans">
     {children}
   </h2>
 );
 
-const SubTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+const SubTitle: FC<{ children: ReactNode }> = ({ children }) => (
   <h3 className="text-xl font-bold text-accent mt-10 mb-4 font-sans flex items-center gap-2">
     <span className="w-1.5 h-6 bg-accent rounded-full inline-block"></span>
     {children}
   </h3>
 );
 
-const ElementCard: React.FC<{ title: string; color: string; desc: string; keywords: string }> = ({ title, color, desc, keywords }) => (
+const ElementCard: FC<{ title: string; color: string; desc: string; keywords: string }> = ({ title, color, desc, keywords }) => (
   <div className={`p-4 rounded-xl text-white shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 ${color}`}>
     <h4 className="font-bold text-xl mb-1">{title}</h4>
     <p className="text-sm opacity-90 font-medium">{desc}</p>
@@ -38,7 +38,7 @@ const ElementCard: React.FC<{ title: string; color: string; desc: string; keywor
   </div>
 );
 
-const GridItem: React.FC<{ title: string; list: string[]; desc: string }> = ({ title, list, desc }) => (
+const GridItem: FC<{ title: string; list: string[]; desc: string }> = ({ title, list, desc }) => (
   <div className="border border-stone-200 p-5 bg-white rounded-lg shadow-sm hover:border-accent/30 transition-colors">
     <strong className="block text-lg font-bold text-subAccent mb-3 pb-2 border-b border-stone-100 font-sans">{title}</strong>
     <ul className="text-sm text-stone-600 mb-3 space-y-1">
@@ -48,7 +48,7 @@ const GridItem: React.FC<{ title: string; list: string[]; desc: string }> = ({ t
   </div>
 );
 
-export const BookContent: React.FC = () => {
+export const BookContent: FC = () => {
   return (
     <article className="prose prose-stone max-w-none prose-p:text-ink prose-p:leading-8 prose-headings:font-sans">
       
